@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily cloud-to-cloud backup with retention
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=SRC_REMOTE=r2:source-bucket/
+Environment=DST_REMOTE=s3:backup-bucket
+Environment=KEEP_DAYS=3
+Environment=RCLONE_CFG=/etc/rclone/rclone.conf
+ExecStart=/usr/local/bin/r2_to_s3_daily.sh
