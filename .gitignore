@@ -1,0 +1,16 @@
+.env
+*.env
+
+*.log
+logs/
+
+rclone.conf
+*.conf
+
+*.key
+*.pem
+*.sqlite
+*.db
+
+backup/
+backups/
