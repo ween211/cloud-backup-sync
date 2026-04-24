@@ -1,0 +1,10 @@
+[Unit]
+Description=Run cloud backup sync daily
+
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Persistent=true
+Unit=cloud-backup-sync.service
+
+[Install]
+WantedBy=timers.target
